@@ -21,7 +21,6 @@ nav .nav-container {
   text-align: center;
   place-items: center;
   place-content: center;
-  justify-content: space-between;
   height: 100%;
 }
 
