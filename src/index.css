@@ -645,7 +645,7 @@ footer .footer-container .otherspro h2 {
   font-family: sans-serif;
 }
 
-@media (max-width:1900px) {
+@media (max-width:1500px) {
   nav .nav-container .links-container {
     display: flex;
     gap: 75px;
