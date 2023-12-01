@@ -7,7 +7,7 @@ class Footer extends Component {
     }
     render() {
         return (
-            <footer style={{ marginTop: this.props.height != "" ? this.props.height : "115vh" }}>
+            <footer style={{ marginTop: this.props.height != "" ? this.props.height : "130vh" }}>
                 <div className='footer-container'>
                     <div className='about'>
                         <h2>About :</h2>

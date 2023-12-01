@@ -423,7 +423,7 @@ section {
 
 footer {
   position: relative;
-  margin-top: 115vh;
+  margin-top: 130vh;
   background-color: #24242483;
   box-shadow: 0 0 10px black;
   height: 200px;
@@ -641,4 +641,30 @@ footer .footer-container .otherspro h2 {
 .faq-section .faq-container h3 {
   font-weight: 300;
   font-family: sans-serif;
+}
+
+@media (max-width:1500px) {
+  nav {
+    min-height: 230px;
+  }
+
+  nav .nav-container {
+    display: grid;
+    text-align: center;
+    place-items: center;
+    place-content: center;
+
+  }
+}
+
+@media (max-width:1000px) {
+
+
+  nav .nav-container .links-container {
+    display: flex;
+    gap: 70px;
+  }
+
+
+
 }
