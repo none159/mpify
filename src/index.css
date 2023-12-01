@@ -19,6 +19,7 @@ nav .nav-container {
   position: absolute;
   display: grid;
   margin: 0 auto;
+  width: 100%;
   text-align: center;
   place-items: center;
   place-content: center;
