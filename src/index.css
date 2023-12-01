@@ -652,7 +652,7 @@ footer .footer-container .otherspro h2 {
   }
 }
 
-@media (max-width:1900px) {
+@media (max-width:900px) {
   nav .nav-container .links-container {
     display: flex;
     gap: 40px;
