@@ -28,6 +28,7 @@ nav .nav-container {
 
 nav .nav-container .logo-container {
   padding: 0 50px;
+  margin: 0 auto;
 }
 
 nav .nav-container .logo-container h2 {
