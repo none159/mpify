@@ -10,16 +10,17 @@
 
 nav {
   position: relative;
-  min-height: 170px;
   background-color: #24242483;
   box-shadow: 0 0 10px black;
+  min-height: 230px;
 }
 
 nav .nav-container {
   position: absolute;
-  display: flex;
-  align-items: center;
+  display: grid;
   text-align: center;
+  place-items: center;
+  place-content: center;
   justify-content: space-between;
   width: 90%;
   height: 100%;
@@ -643,21 +644,8 @@ footer .footer-container .otherspro h2 {
   font-family: sans-serif;
 }
 
+
 @media (max-width:1500px) {
-  nav {
-    min-height: 230px;
-  }
-
-  nav .nav-container {
-    display: grid;
-    text-align: center;
-    place-items: center;
-    place-content: center;
-
-  }
-}
-
-@media (max-width:1000px) {
 
 
   nav .nav-container .links-container {
