@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar"
 import './App.css'
 import MHero from './components/MHero'
 import Footer from './components/Footer'
-import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home"
 import Contact from './components/Contact'
 import Faq from './components/Faq'
@@ -13,10 +13,15 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/mpify' element={<Home />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/faq' element={<Faq />} />
-          <Redirect from="*" to="/mpify" />
+          <Switch>
+            <Route path='/mpify' element={<Home />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/faq' element={<Faq />} />
+            <Route
+              path="*"
+              element={<Navigate to="/mpfiy" replace />}
+            />
+
         </Routes>
       </BrowserRouter>
     </>
