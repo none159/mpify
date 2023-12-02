@@ -13,14 +13,14 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Switch>
-            <Route path='/mpify' element={<Home />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/faq' element={<Faq />} />
-            <Route
-              path="*"
-              element={<Navigate to="/mpfiy" replace />}
-            />
+
+          <Route path='/mpify' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/faq' element={<Faq />} />
+          <Route
+            path="*"
+            element={<Navigate to="/mpfiy" replace />}
+          />
 
         </Routes>
       </BrowserRouter>
