@@ -16,6 +16,7 @@ function App() {
           <Route path='/mpify' element={<Home />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/faq' element={<Faq />} />
+          <Redirect from="*" to="/mpify" />
         </Routes>
       </BrowserRouter>
     </>
