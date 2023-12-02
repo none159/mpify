@@ -15,8 +15,8 @@ class Footer extends Component {
                     </div>
                     <div className='footer-links'>
                         <Link to="/mpify"><a>Home</a></Link>
-                        <Link to="faq"><a>FAQ</a></Link>
-                        <Link to="contact"><a>Contact</a></Link>
+                        <Link to="/faq"><a>FAQ</a></Link>
+                        <Link to="/contact"><a>Contact</a></Link>
                     </div>
                     <div className='otherspro'>
                         <h2>Other Projects :</h2>
