@@ -19,7 +19,7 @@ function App() {
           <Route path='/faq' element={<Faq />} />
           <Route
             path="*"
-            element={<Navigate to="/mpfiy" replace />}
+            element={<Navigate to="/mpify" replace />}
           />
 
         </Routes>
