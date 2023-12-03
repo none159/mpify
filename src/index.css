@@ -377,7 +377,7 @@ section .hero-container .features {
   display: flex;
   position: relative;
   width: 100%;
-  top: 900px;
+  top: 700px;
   flex-direction: column;
   align-items: center;
   text-align: center;
