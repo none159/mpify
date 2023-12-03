@@ -29,7 +29,7 @@ class Navbar extends Component {
                         <Link to="/faq"><a>FAQ</a></Link>
                         <Link to="/contact"><a>Contact</a></Link>
                         <div className="appearance">
-                            <i class="fa fa-moon-o" aria-hidden="true" style={{ color: this.state.dark ? 'white' : '#242424' }}></i><label className="switch">
+                            <i className="fa fa-moon-o" aria-hidden="true" style={{ color: this.state.dark ? 'white' : '#242424' }}></i><label className="switch">
                                 <input type="checkbox" onClick={() => this.setbackground()} />
                                 <div className="slider round"></div>
                             </label></div>

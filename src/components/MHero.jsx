@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
+
+
 class MHero extends Component {
     constructor() {
         super();
@@ -8,8 +10,9 @@ class MHero extends Component {
             link: "",
             downloadlinkmp3: "",
             downloadlinkmp4: "",
-            duration: "",
+            channel: "",
             title: "",
+            thumb: ""
 
         }
     }
@@ -18,27 +21,10 @@ class MHero extends Component {
         var match = url.match(regExp);
         return (match && match[7].length == 11) ? match[7] : false;
     }
-    async convert() {
+    async convert(e) {
         const id = this.youtube_parser(this.state.link)
         this.setState({ download: true })
-
-        const options1 = {
-            method: 'GET',
-            url: 'https://youtube-mp36.p.rapidapi.com/dl',
-            params: { id: id },
-            headers: {
-                'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
-                'X-RapidAPI-Host': 'youtube-mp36.p.rapidapi.com'
-            }
-        };
-
-        try {
-            const response = await axios.request(options1);
-            console.log(response.data);
-            this.setState({ downloadlinkmp3: response.data.link, title: response.data.title, duration: response.data.duration })
-        } catch (error) {
-            console.error(error);
-        }
+        e.preventDefault();
 
 
         const options2 = {
@@ -46,31 +32,43 @@ class MHero extends Component {
             url: 'https://youtube-video-download-info.p.rapidapi.com/dl',
             params: { id: id },
             headers: {
-                'X-RapidAPI-Key': 'e78c98ee35msha781d1bc61c7857p12d10djsn5edc23bf365f',
+                'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
                 'X-RapidAPI-Host': 'youtube-video-download-info.p.rapidapi.com'
             }
         };
 
         try {
             const response = await axios.request(options2);
-            console.log(response.data);
-            this.setState({ downloadlinkmp4: response.data.link })
+            this.setState({ downloadlinkmp4: response.data.link, title: response.data.title, thumb: response.data.thumb, channel: response.data.author })
+            console.log(response.data)
         } catch (error) {
             console.error(error);
         }
+
     }
     render() {
+        const { downloadlinkmp4 } = this.state
         return (
             <section>
                 <div className='hero-container'>
                     <div className='mp3-mp4-container'>
                         <h2>Put you're Youtube link here :</h2>
                         <input value={this.state.link} onChange={(e) => this.setState({ link: e.currentTarget.value })} placeholder='https://www.youtube.com/watch?v=something' />
-                        <button onClick={() => this.convert()}>Convert</button>
-                        {this.state.downloadlinkmp3 != "" ?
-                            <div>
-                                <h3>Title : <span>{this.state.title}</span> / Duration : <span>{(this.state.duration / 60).toFixed(2)}</span></h3>
-                                <a href={this.state.downloadlinkmp3} target='_blank' rel='noreferrer'> Download Mp3</a>
+                        <button onClick={(e) => this.convert(e)}>Convert</button>
+                        {downloadlinkmp4 != "" ?
+                            <div className='download-container'>
+                                <h3>Title : <span>{this.state.title}</span> | Channel : <span>{this.state.channel}</span></h3>
+                                <img src={this.state.thumb}></img>
+                                <h3>Mp4 download Links : </h3>
+                                {Object.keys(this.state.downloadlinkmp4).map(function (key, index) {
+
+                                    return (
+                                        <div key={index} className='mp4-downloader' style={{ textAlign: "center" }}>
+                                            <h3>{(downloadlinkmp4[key][2]).toUpperCase()} :</h3>
+                                            <a href={downloadlinkmp4[key][0]} target='_blank' rel='noreferrer'>{downloadlinkmp4[key][3]}</a>
+                                        </div>
+                                    )
+                                })}
                             </div> : ""}
                     </div>
                     <div className='uses'>
@@ -88,12 +86,12 @@ class MHero extends Component {
                         <h2>Features</h2>
                         <div className='features-container'>
                             <div>
-                                <h3><i class="fa fa-money" aria-hidden="true"></i> Free</h3>
-                                <h3><i class="fa fa-fast-forward" aria-hidden="true"></i> Fast</h3>
+                                <h3><i className="fa fa-money" aria-hidden="true"></i> Free</h3>
+                                <h3><i className="fa fa-fast-forward" aria-hidden="true"></i> Fast</h3>
                             </div>
                             <div>
-                                <h3>  <i class="fa fa-check" aria-hidden="true"></i> Easy</h3>
-                                <h3><i class="fa fa-shield" aria-hidden="true"></i> Secure</h3>
+                                <h3>  <i className="fa fa-check" aria-hidden="true"></i> Easy</h3>
+                                <h3><i className="fa fa-shield" aria-hidden="true"></i> Secure</h3>
                             </div>
                         </div>
                     </div>

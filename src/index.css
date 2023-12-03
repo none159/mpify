@@ -166,18 +166,15 @@ section {
   top: 300px;
 }
 
-
-
 section .hero-container .mp3-mp4-container {
-  position: absolute;
+  position: relative;
   display: grid;
   background-color: rgba(248, 64, 64, 0.722);
   width: 100%;
   box-shadow: inset 0 0 10px rgb(248, 64, 64);
-  padding: 150px 10px;
+  padding: 20px;
   margin-left: -10px;
-
-  gap: 50px;
+  gap: 70px;
   place-items: center;
 }
 
@@ -216,40 +213,74 @@ section .hero-container .mp3-mp4-container button {
   transition: 350ms ease-in-out;
 }
 
+section .hero-container .mp3-mp4-container img {
+  box-shadow: 0 0 5px black;
+  border-radius: .3em;
+  border: 2px solid rgb(248, 64, 64);
+}
+
 section .hero-container .mp3-mp4-container button:hover {
   color: rgb(248, 64, 64);
 }
 
-section .hero-container .mp3-mp4-container div {
+section .hero-container .mp3-mp4-container .download-container {
+  display: grid;
+  place-content: center;
+  place-items: center;
   text-align: center;
+  gap: 10px;
 }
 
-section .hero-container .mp3-mp4-container div h3 {
+section .hero-container .mp3-mp4-container .download-container h3 {
   font-weight: 300;
+  font-family: sans-serif;
+  font-size: larger;
+}
+
+section .hero-container .mp3-mp4-container .download-container h3:nth-child(0) {
+  color: rgb(248, 64, 64);
+  text-decoration: underline;
 }
 
 section .hero-container .mp3-mp4-container span {
   color: rgb(248, 64, 64);
 }
 
-section .hero-container .mp3-mp4-container a {
+section .hero-container .mp3-mp4-container .download-container .mp4-downloader a {
+
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
   margin: 10px;
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.592);
-  padding: 10px;
+  padding: 10px 30px;
   color: #242424;
-  box-shadow: 0 0 10px black;
-
+  box-shadow: 0 0 5px black;
   border-radius: .3em;
-  transition: 350ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 
-section .hero-container .mp3-mp4-container a:hover {
+section .hero-container .mp3-mp4-container .download-container .mp4-downloader a:hover {
   color: rgb(248, 64, 64);
   transform: scale(1.15);
   border-radius: .5em;
+}
+
+section .hero-container .mp3-mp4-container .download-container .mp4-downloader {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 30px;
+}
+
+section .hero-container .mp3-mp4-container .download-container .mp4-downloader a {
+  margin: 20px auto;
+
+}
+
+section .hero-container .mp3-mp4-container .download-container .mp4-downloader h3 {
+  color: black;
+  text-decoration: none;
 }
 
 section .hero-container .uses {
@@ -258,7 +289,7 @@ section .hero-container .uses {
   width: 100%;
   margin: 0 10px;
   gap: 30px;
-  top: 700px;
+  top: 500px;
   float: left;
 }
 
